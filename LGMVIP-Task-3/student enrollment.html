@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+.box .headinggg {
+    position: sticky;
+    top: 0;
+    height: 50px;
+    background-color:rgb(224, 59, 158);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+    font-family: 'Cinzel', serif;
+    font-size: 45px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.673);
+    user-select: none;
+}
+
+.container {
+    height: auto;
+    background-color:rgb(140, 216, 216);
+    display: flex;
+    justify-content: center;
+}
+
+.container .form {
+    width: 50%;
+}
+
+.container .form form {
+    margin: 30px;
+    display: flex;
+    flex-direction:column;
+    gap: 30px;
+    padding: 10px;
+    word-wrap: break-word;
+}
+
+#name,
+#email,
+#website,
+#url {
+    width: 335px;
+    padding: 10px;
+    border-radius: 2px;
+    border: none;
+    caret-color: rgb(73, 59, 201);
+    outline: 1px solid rgba(128, 128, 128, 0.26);
+    font-size: 15px;
+}
+
+#name:focus,
+#email:focus,
+#website:focus,
+#url:focus {
+    outline: 1px solid rgba(0, 0, 255, 0.711);
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    gap: 8.6vw;
+    font-size: 1.25rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.email {
+    display: flex;
+    align-items: center;
+    gap: 9vw;
+    font-size: 1.25rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.website {
+    display: flex;
+    align-items: center;
+    gap: 7.4vw;
+    font-size: 1.25rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.gender {
+    display: flex;
+    align-items: center;
+    gap: 7.7vw;
+    font-size: 1.25rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.image {
+    display: flex;
+    align-items: center;
+    gap: 8.5vw;
+    font-size: 1.25rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.skills {
+    display: flex;
+    align-items: center;
+    gap: 9vw;
+    font-size: 1.25rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.text-p {
+    font-size: 1.18rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.text-p label {
+    display: flex;
+    gap: 3px;
+    align-items: baseline;
+}
+
+.button {
+    display: flex;
+    gap: 5vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.button #submit {
+    padding: 8px 40px;
+
+    font-size: 1.2rem;
+    background-color:green;
+    border: none;
+    box-shadow: 4px 4px 7px -2px rgb(0 0 0 / 70%);
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.button #reset {
+    padding: 8px 40px;
+    background-color: rgb(56, 125, 245);
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 4px 4px 7px -2px rgb(0 0 0 / 70%);
+}
+
+.button #submit:active,
+.button #reset:active {
+    background-color:rgb(202, 234, 89);
+    box-shadow: none;
+}
+
+.container .line {
+    margin: auto;
+    width: 3px;
+    height: 80vh;
+    background-color: teal;
+    border-radius: 33px;
+}
+
+.op-box {
+    width: 50%;
+
+}
+
+.output {
+    padding: 45px;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 5px;
+    border-bottom: 1px solid teal;
+}
+
+.output .cardContainer {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-y: auto;
+    height: 73vh;
+}
+
+.output .card {
+    height: auto;
+    display: flex;
+    background-color: rgba(128, 128, 128, 0.132);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 10px 0;
+    gap: 5vw;
+}
+
+.card img {
+    border-radius: 0.5rem;
+    width: 130px;
+    height: 150px;
+}
+
+.card .info {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.card .info a {
+    color: rgb(43, 43, 255);
+    text-decoration: none;
+}
+
+.card .info a:hover {
+    text-decoration: underline;
+}
+
+.card .info button {
+    padding: 2px 15px;
+    border-radius: 25px;
+    border: none;
+    background-color: teal;
+    color: white;
+    box-shadow: 4px 4px 7px -2px rgb(0 0 0 / 70%);
+    cursor: pointer;
+}
+
+.card .info button:active {
+    background-color: darkseagreen;
+    box-shadow: none;
+}
+@media only screen and (max-width:1000px) {
+    .container .line {
+        display: none;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .container .form {
+        width: 100%;
+    }
+
+    .op-box {
+        width: 100%;
+
+    }
+
+    .name,
+    .email,
+    .website,
+    .image,
+    .skills,
+    .gender {
+        justify-content: space-around;
+    }
+
+    .gender {
+        padding-right: 17vw;
+    }
+}
+
+@media only screen and (max-width:700px) {
+    h1 {
+        font-size: 25px;
+    }
+
+    .container .form form {
+        padding: 27px;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    .output .card {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .card img {
+        margin: auto;
+
+    }
+} 
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="headinggg">
+            <h1>Student Enrollment Form</h1>
+        </div>
+        <div class="container">
+            <div class="form">
+                <form autocomplete="on">
+                    <div class="name">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" placeholder="Enter Your Name..." required>
+                    </div>
+                    <div class="email">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" placeholder="Enter Your Email..." required>
+                    </div>
+                    <div class="website">
+                        <label for="website">Website:</label>
+                        <input type="url" id="website" placeholder="https://www.abc.com" required>
+                    </div>
+                    <div class="image">
+                        <label for="url">Image:</label>
+                        <input type="url" id="url" placeholder="Enter Your Image URL..." required>
+                    </div>
+                    <div class="gender">
+                        <label for="gender">Gender:</label>
+                        <span class="text-p">
+                        <label><input type="radio" name="male-female" id="male" value="Male" required>Male</label>
+                            <label><input type="radio" name="male-female" id="female" value="Female"
+                                    required>Female</label>
+                            <label><input type="radio" name="male-female" id="female" value="Other"
+                                    required>Other</label>
+                        </span>
+                    </div>
+                    <div class="skills">
+                        <label for="skills">Skills:</label>
+                        <span class="text-p">
+                            <label><input type="checkbox" value="HTML" id="html" class="checkbox">HTML</label>
+                            <label><input type="checkbox" value="CSS" id="css" class="checkbox">CSS</label>
+                            <label><input type="checkbox" value="JavaScript" id="css"
+                                    class="checkbox">JavaScript</label>
+                        </span>
+                    </div>
+                    <div class="button">
+                        <button type="submit" id="submit">Submit</button>
+                        <button type="reset" id="reset">Clear</button>
+                    </div>
+                </form>
+            </div>
+            <div class="line"></div>
+            <div class="op-box">
+                <div class="output">
+                    <h2>Students Detail</h2>
+                    <div class="cardContainer" id="cardContainer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let submitBtn = document.getElementById("submit");
+
+const info = {
+    student_name: '',
+    email: '',
+    url: '',
+    website: '',
+    gender: '',
+    skillArr: [],
+}
+
+const getData = () => {
+    info.student_name = document.getElementById('name').value;
+    info.email = document.getElementById('email').value;
+    info.url = document.getElementById('url').value;
+    info.website = document.getElementById('website').value;
+    info.gender = document.querySelector('input[name="male-female"]:checked').value;
+    let skills = document.querySelectorAll('.checkbox:checked');
+
+    info.skillArr = [];
+    skills.forEach((item) => {
+        info.skillArr.push(item.value);
+    })
+
+    if (localStorage.getItem("infoSection") === null) {
+        infoItem = [];
+    }
+    else {
+        infoItem = JSON.parse(localStorage.getItem("infoSection"))
+    }
+    infoItem.push(info);
+    localStorage.setItem("infoSection", JSON.stringify(infoItem));
+}
+
+const showData = () => {
+    let cardContainer = document.getElementById("cardContainer");
+
+    let cards = '';
+
+    let getLocalStorage = localStorage.getItem("infoSection");
+
+     if (getLocalStorage === null) {
+        console.log("null");
+    }
+    else {
+        cardDivArr = JSON.parse(getLocalStorage);
+
+        cardDivArr.forEach((item, index) => {
+
+            cards += `<div class="card">
+            <img src=${item.url} alt="Profile Picture">
+            <div class="info">
+                <p><strong>Name</strong> : ${item.student_name}</p>
+                <p><strong>Email</strong> : ${item.email}</p>
+                <p><strong>Website</strong> : <a href="${item.website}">Click here</a></p>
+                <p><strong>Gender</strong> : ${item.gender}</p>
+                <p><strong>Skills</strong> : ${item.skillArr.join(", ")}</p>
+                <button onclick="deleteData(${index})">Delete</button>
+            </div>
+        </div>`;
+        })
+    }
+    cardContainer.innerHTML = cards;
+}
+
+const deleteData = (index) => {
+    let getList = JSON.parse(localStorage.getItem("infoSection"));
+    getList.splice(index, 1);
+
+    localStorage.setItem("infoSection", JSON.stringify(getList));
+    window.location.reload();
+}
+submitBtn.addEventListener(('click'), () => {
+    getData();
+    showData();
+})
+    </script>
+</body>
+
+</html>
